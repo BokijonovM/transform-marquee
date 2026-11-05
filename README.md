@@ -2,6 +2,8 @@
 
 A React marquee where every chip **wipes from a "before" state into an "after" state** as it crosses a line. Rows of chips drift across the screen; at the split line, *Rough idea* becomes *Production-ready product*.
 
+**[Live demo →](https://transform-marquee.vercel.app/)**
+
 - **One component, a few props:** rows, chips per row, speed, direction and split position
 - **Restyle with CSS variables:** border radius, colours, icon size, padding
 - **Fast:** layout is measured once with `ResizeObserver`, each frame only writes `transform` and `clip-path`, and the animation stops when the marquee is off-screen
