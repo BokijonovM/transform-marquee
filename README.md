@@ -144,4 +144,4 @@ npm run build      # builds dist/ (ESM + CJS + types + styles.css)
 
 ## License
 
-MIT © Muhsinjon Bokijonov
+MIT © [Muhsinjon Bokijonov](https://bokijonov.com)

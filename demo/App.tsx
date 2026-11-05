@@ -202,7 +202,7 @@ export function App() {
       </section>
 
       <footer>
-        MIT © Muhsinjon Bokijonov
+        MIT © <a href="https://bokijonov.com">Muhsinjon Bokijonov</a>
       </footer>
     </div>
   );

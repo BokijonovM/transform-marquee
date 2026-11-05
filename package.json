@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "description": "A React marquee where every chip wipes from a \"before\" to an \"after\" state as it crosses the centre line.",
   "license": "MIT",
-  "author": "Muhsinjon Bokijonov",
+  "author": "Muhsinjon Bokijonov (https://bokijonov.com)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BokijonovM/transform-marquee.git"
