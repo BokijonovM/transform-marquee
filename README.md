@@ -1,5 +1,7 @@
 # transform-marquee
 
+![transform-marquee demo](https://raw.githubusercontent.com/BokijonovM/transform-marquee/main/transform-marquee.gif)
+
 A React marquee where every chip **wipes from a "before" state into an "after" state** as it crosses a line. Rows of chips drift across the screen; at the split line, *Rough idea* becomes *Production-ready product*.
 
 **[Live demo →](https://transform-marquee.vercel.app/)**
