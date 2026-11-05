@@ -1,0 +1,73 @@
+{
+  "name": "transform-marquee",
+  "version": "0.1.0",
+  "description": "A React marquee where every chip wipes from a \"before\" to an \"after\" state as it crosses the centre line.",
+  "license": "MIT",
+  "author": "Muhsinjon Bokijonov",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BokijonovM/transform-marquee.git"
+  },
+  "homepage": "https://github.com/BokijonovM/transform-marquee#readme",
+  "bugs": {
+    "url": "https://github.com/BokijonovM/transform-marquee/issues"
+  },
+  "keywords": [
+    "react",
+    "marquee",
+    "animation",
+    "before-after",
+    "transformation",
+    "ticker",
+    "nextjs",
+    "component"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./styles.css": "./dist/styles.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "vite demo",
+    "build:demo": "vite build demo",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tsup": "^9.0.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0"
+  }
+}

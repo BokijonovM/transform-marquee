@@ -1,0 +1,233 @@
+:root {
+  color-scheme: light;
+  --page: #f4f4f1;
+  --ink: #111113;
+  --soft: #5f5f66;
+  --line: rgba(17, 17, 19, 0.12);
+  --panel: #ffffff;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0c0c0e;
+  --ink: #f2f2f3;
+  --soft: #a0a0a8;
+  --line: rgba(242, 242, 243, 0.12);
+  --panel: #151518;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+}
+
+.page {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 16px 4rem;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.top nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+a {
+  color: var(--soft);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.ghost {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+}
+
+.hero {
+  padding: 3rem 0 2rem;
+  max-width: 44rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.hero em {
+  font-style: normal;
+  color: #6366f1;
+}
+
+.hero p {
+  margin: 1rem 0 1.5rem;
+  color: var(--soft);
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+
+.install {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.65rem 0.75rem 0.65rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: var(--panel);
+}
+
+.install span {
+  color: var(--soft);
+  font-size: 0.875rem;
+}
+
+code,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* The marquee's fade colour defaults to Canvas, so the stage uses it too. */
+.stage {
+  height: 26rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: Canvas;
+  overflow: hidden;
+}
+
+.playground {
+  display: grid;
+  grid-template-columns: minmax(0, 20rem) minmax(0, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 800px) {
+  .playground {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.controls,
+.code {
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--panel);
+  padding: 1.25rem;
+}
+
+.controls {
+  display: grid;
+  gap: 0.9rem;
+  align-content: start;
+}
+
+.controls h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.controls label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+}
+
+.controls label > span {
+  display: flex;
+  justify-content: space-between;
+  color: var(--soft);
+}
+
+.controls output {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.controls select,
+.controls input[type="color"] {
+  width: 100%;
+  padding: 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+}
+
+.controls input[type="color"] {
+  height: 2.25rem;
+}
+
+.controls input[type="range"] {
+  width: 100%;
+  accent-color: #6366f1;
+}
+
+.controls .toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.controls .toggle span {
+  color: var(--ink);
+}
+
+.code {
+  min-width: 0;
+}
+
+.code-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  color: var(--soft);
+  font-size: 0.875rem;
+}
+
+.code pre {
+  margin: 0;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+footer {
+  margin-top: 3rem;
+  color: var(--soft);
+  font-size: 0.875rem;
+}
