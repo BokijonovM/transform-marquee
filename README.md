@@ -67,28 +67,49 @@ Breakpoints are measured on the **container's width**, not the viewport's, so th
 
 | Prop | Type | Default | Description |
 |---|---|---|---|
-| `items` | `TransformMarqueeItem[]` | required | `{ from, to, fromIcon?, toIcon?, id? }`. Items are dealt out across rows in order and repeat if there are fewer items than chips. |
-| `rows` | `Responsive<number \| "auto">` | `"auto"` | Number of rows, or fill the container's height. |
-| `perRow` | `Responsive<number>` | `{ base: 2, lg: 4 }` | Chips travelling in each row at once. |
-| `speed` | `number \| [min, max]` | `[120, 155]` | Pixels per second. A range gives each row its own speed. |
+| `items` | `Item[]` | required | The before/after pairs. See [item shape](#item-shape). |
+| `rows` | `R<number \| "auto">` | `"auto"` | Number of rows, or fill the height. |
+| `perRow` | `R<number>` | `{ base: 2, lg: 4 }` | Chips in each row at once. |
+| `speed` | `number \| [min, max]` | `[120, 155]` | Pixels per second. A range varies it per row. |
 | `direction` | `"right" \| "left"` | `"right"` | Travel direction. |
-| `splitAt` | `number` | `0.5` | Position of the wipe line, from 0 to 1 across the row. |
+| `splitAt` | `number` | `0.5` | Wipe line position, 0 to 1. |
 | `rowHeight` | `number` | `68` | Row height in px. |
 | `rowGap` | `number` | `4` | Gap between rows in px. |
-| `chipGap` | `number` | `48` | Minimum gap between chips in the same row, in px. |
-| `pauseOnHover` | `boolean` | `true` | Pause a row while the pointer is over it. |
+| `chipGap` | `number` | `48` | Min gap between chips in px. |
+| `pauseOnHover` | `boolean` | `true` | Pause a row on hover. |
 | `paused` | `boolean` | | Controlled pause state. |
-| `onPausedChange` | `(paused) => void` | | Called when the pause button is pressed. |
-| `pauseButton` | `boolean` | `false` | Show a pause/play button. Recommended for [WCAG 2.2.2](https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide). |
-| `divider` | `boolean` | `true` | Draw the vertical line at the split. |
-| `edgeFade` | `Responsive<string \| number> \| false` | `"clamp(3rem, 15%, 16rem)"` | Width of the left and right fade masks. |
-| `breakpoints` | `Partial<Breakpoints>` | see above | Container widths used by responsive props. |
-| `renderChip` | `(item, side) => ReactNode` | | Replace a chip's content (the icon and label) entirely. |
-| `classNames` | `{ root, lane, chip, from, to, icon, divider, fade, pauseButton }` | | Extra classes for each part. |
-| `srList` | `boolean` | `true` | Render a visually hidden list of the pairs for screen readers. |
-| `labels` | `{ pause?, play? }` | | Accessible labels for the pause button. |
+| `onPausedChange` | `(paused) => void` | | Called by the pause button. |
+| `pauseButton` | `boolean` | `false` | Show a pause/play button ([WCAG 2.2.2](https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide)). |
+| `divider` | `boolean` | `true` | Line at the split. |
+| `edgeFade` | `R<string \| number> \| false` | see below | Width of the edge fades. |
+| `breakpoints` | `Partial<Breakpoints>` | see above | Widths for responsive props. |
+| `renderChip` | `(item, side) => ReactNode` | | Custom chip content. |
+| `classNames` | `object` | | Extra classes per part. See below. |
+| `srList` | `boolean` | `true` | Hidden list for screen readers. |
+| `labels` | `{ pause?, play? }` | | Pause button labels. |
+
+`R<T>` means a [responsive value](#responsive-values): a plain value or an object like `{ base, md, lg }`.
 
 Other `div` attributes (`className`, `style`, `id`, `aria-*`…) are passed to the root element.
+
+### Item shape
+
+```ts
+type TransformMarqueeItem = {
+  from: ReactNode;      // "before" label
+  to: ReactNode;        // "after" label
+  fromIcon?: ReactNode;
+  toIcon?: ReactNode;
+  id?: string | number; // stable key
+};
+```
+
+Items are dealt out across rows in order and repeat if there are fewer items than chips.
+
+### More defaults
+
+- **`edgeFade`** defaults to `"clamp(3rem, 15%, 16rem)"`. Pass `false` to turn the fades off.
+- **`classNames`** accepts `root`, `lane`, `chip`, `from`, `to`, `icon`, `divider`, `fade` and `pauseButton`.
 
 ## Styling
 
