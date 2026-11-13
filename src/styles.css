@@ -26,6 +26,7 @@
   --tm-accent: #6366f1;
   --tm-accent-fg: #ffffff;
   --tm-fade-color: var(--tm-bg);
+  --tm-fade-opacity: 1;
   --tm-divider-color: var(--tm-accent);
 
   position: relative;
@@ -140,18 +141,21 @@
   top: 0;
   bottom: 0;
   z-index: 3;
-  width: var(--tm-fade-width, 0);
+  /* 1px wider than asked and hung 1px past the edge, so a chip can never show
+     through as a hairline where sub-pixel rounding leaves the edge uncovered. */
+  width: calc(var(--tm-fade-width, 0px) + 1px);
+  opacity: var(--tm-fade-opacity);
   pointer-events: none;
 }
 
 .tm-fade-left {
-  left: 0;
-  background: linear-gradient(to right, var(--tm-fade-color), transparent);
+  left: -1px;
+  background: linear-gradient(to right, var(--tm-fade-color) 2px, transparent);
 }
 
 .tm-fade-right {
-  right: 0;
-  background: linear-gradient(to left, var(--tm-fade-color), transparent);
+  right: -1px;
+  background: linear-gradient(to left, var(--tm-fade-color) 2px, transparent);
 }
 
 .tm-pause {

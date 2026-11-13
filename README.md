@@ -108,7 +108,7 @@ Items are dealt out across rows in order and repeat if there are fewer items tha
 
 ### More defaults
 
-- **`edgeFade`** defaults to `"clamp(3rem, 15%, 16rem)"`. Pass `false` to turn the fades off.
+- **`edgeFade`** defaults to `"clamp(3rem, 15%, 16rem)"`. Pass any CSS length (`"20%"`, `120`) to change their width, or `false` to turn them off. Soften them with `--tm-fade-opacity` and recolour them with `--tm-fade-color`.
 - **`classNames`** accepts `root`, `lane`, `chip`, `from`, `to`, `icon`, `divider`, `fade` and `pauseButton`.
 
 ## Styling
@@ -138,6 +138,7 @@ Every visual choice is a CSS custom property on `.tm-root`. Set them with `style
 | `--tm-border` | 15% of `--tm-fg` |
 | `--tm-accent` / `--tm-accent-fg` | `#6366f1` / `#fff` |
 | `--tm-fade-color` | `--tm-bg` |
+| `--tm-fade-opacity` | `1` (0 hides the edge fades, 1 is solid) |
 | `--tm-divider-color` | `--tm-accent` |
 
 The colour defaults use the CSS system colours `Canvas` and `CanvasText`, so they follow your page's `color-scheme`. If your site sets its own background colours, set `--tm-bg` (and `--tm-fade-color`, if different) to match the section behind the marquee, so the edge fades blend in.
