@@ -111,6 +111,33 @@ export const Phone = () => (
     <path d="M11 18h2" />
   </Icon>
 );
+export const Sun = () => (
+  <Icon>
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+  </Icon>
+);
+export const Moon = () => (
+  <Icon>
+    <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z" />
+  </Icon>
+);
+export const Copy = () => (
+  <Icon>
+    <rect x="9" y="9" width="12" height="12" rx="2" />
+    <path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1" />
+  </Icon>
+);
+export const Tick = () => (
+  <Icon>
+    <path d="m5 12.5 4.5 4.5L19 7.5" />
+  </Icon>
+);
+export const Drag = () => (
+  <Icon>
+    <path d="m9 7-5 5 5 5M15 7l5 5-5 5" />
+  </Icon>
+);
 export const Users = () => (
   <Icon>
     <circle cx="9" cy="8" r="3.5" />
